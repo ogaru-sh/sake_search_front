@@ -9,7 +9,8 @@ export default function SSR() {
 // that is because the page becomes a serverless function instead of being statically
 // exported when you use `getServerSideProps` or `getInitialProps`
 export function getServerSideProps() {
-  const reduxStore = initializeStore()
+  const initialState: any = {}
+  const reduxStore = initializeStore(initialState)
   const { dispatch } = reduxStore
 
   dispatch({
